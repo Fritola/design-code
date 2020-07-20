@@ -1,31 +1,15 @@
-import React from 'react';
-import Welcome from './src/Components/Welcome'
+import React from 'react'
 
-import styled from 'styled-components'
-import Card from './src/Components/Card';
+import {Provider} from 'react-redux'
+import HomeScreen from './screens/HomeScreen'
+import store from './src/store'
 
-export default function App() {
-  return (
-    <Container>
-		<Welcome />
-		<Subtitle>
-			Continue Learning
-		</Subtitle>
-		<Card />
-    </Container>
-  );
+const App = () => {
+	return(
+		<Provider store={store}>
+			<HomeScreen />
+		</Provider>
+	)
 }
 
-const Container = styled.View`
-	flex: 1;
-	background-color: #f0f3f5;	
-`
-
-const Subtitle = styled.Text`
-	color: #b8bece;
-	font-weight: 600;
-	font-size: 15px;
-	margin-left: 20px;
-	margin-top: 50px;
-	text-transform: uppercase;
-`
+export default App
